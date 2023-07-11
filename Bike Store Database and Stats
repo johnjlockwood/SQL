@@ -1,0 +1,17 @@
+-- create a bike store inventory database
+CREATE TABLE bikes (id INTEGER PRIMARY KEY, style TEXT, quantity INTEGER, color TEXT, size INTEGER, price INTEGER);
+
+INSERT INTO bikes VALUES (1,"mountain", 5, "red", 10, 1000);
+INSERT INTO bikes VALUES (2, "cruiser", 10, "grey", 7, 800);
+INSERT INTO bikes VALUES (3, "road", 20, "black", 8, 3000);
+INSERT INTO bikes VALUES (4, "tricycle", 4, "red", 2, 30);
+INSERT INTO bikes VALUES (5, "BMX", 7, "rainbow", 6, 1500);
+
+-- place the bikes in order from most to least expensive
+SELECT * FROM bikes ORDER BY price DESC;
+
+-- Total number of bikes in the inventory
+SELECT SUM(quantity) FROM bikes;
+
+-- total value of inventory in the store
+SELECT SUM(quantity*price) FROM bikes;
